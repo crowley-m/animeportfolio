@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Anton, Zen_Kaku_Gothic_New, Space_Mono } from "next/font/google";
+import { NavMenu } from "@/components/nav-menu";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import "./globals.css";
 
 const anton = Anton({
@@ -32,7 +34,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${anton.variable} ${zenKaku.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-body">
-        {children}
+        <NavMenu />
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
